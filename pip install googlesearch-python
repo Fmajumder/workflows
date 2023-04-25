@@ -1,0 +1,21 @@
+from googlesearch import search
+import webbrowser
+
+def search_web(query):
+    print(f"Searching for '{query}'...")
+    for url in search(query, num_results=5):
+        print(f"Opening URL: {url}")
+        webbrowser.open(url)
+
+def main():
+    print("Welcome to your basic AI agent!")
+    while True:
+        task = input("What do you want me to search for? (Type 'exit' to quit): ")
+        
+        if task.lower() == 'exit':
+            break
+
+        search_web(task)
+
+if __name__ == "__main__":
+    main()
